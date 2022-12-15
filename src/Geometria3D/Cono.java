@@ -1,5 +1,5 @@
 package Geometria3D;
-import java.util.Scanner;
+
 
 public class Cono {
 
@@ -11,68 +11,19 @@ public class Cono {
         volumen = 0.0;
     }
 
-    public double getArea() {
-        return area;
-    }
 
-    public double getVolumen() {
-        return volumen;
-    }
-
-    public void areaCono(){
-        Scanner sc = new Scanner(System.in);
-        double radio, altura, generatriz;
-
-        System.out.print("Ingrese el radio del cono: ");
-        radio = sc.nextDouble();
-        while(radio < 0.0){
-            System.out.print("Ingrese el radio del cono: ");
-            radio = sc.nextDouble();
-        }
-
-        System.out.print("\nIngrese la altura del cono: ");
-        altura = sc.nextDouble();
-        while(altura < 0.0){
-            System.out.print("Ingrese la altura del cono: ");
-            altura = sc.nextDouble();
-        }
-
-        System.out.print("\nIngrese la generatriz del cono:  ");
-        generatriz = sc.nextDouble();
-        while(generatriz < 0.0){
-            System.out.print("Ingrese la generatriz del cono: ");
-            generatriz = sc.nextDouble();
-        }
-
-
+    public double areaCono(double radio, double generatriz){
 
         area = Math.PI * radio * (generatriz + radio) ;
+        return area;
 
-        System.out.println("\nEL área del cono es: " + getArea());
     }
 
 
-    public void volumenCono(){
-        Scanner sc = new Scanner(System.in);
-        double radio, altura, generatriz;
-
-        System.out.print("Ingrese el radio del cono: ");
-        radio = sc.nextDouble();
-        while(radio < 0.0){
-            System.out.print("Ingrese el radio del cono: ");
-            radio = sc.nextDouble();
-        }
-
-        System.out.print("\nIngrese la altura del cono: ");
-        altura = sc.nextDouble();
-        while(altura < 0.0){
-            System.out.print("Ingrese la altura del cono: ");
-            altura = sc.nextDouble();
-        }
-
+    public double volumenCono(double radio, double altura){
 
         volumen = Math.PI * radio * radio * altura / 3.0;
-        System.out.println("\nEl volúmen del cono es: " + getVolumen());
+        return volumen;
 
     }
 
