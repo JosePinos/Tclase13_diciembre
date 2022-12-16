@@ -8,18 +8,33 @@ public class Tetraedro {
         volumen = 0.0;
     }
 
-    public double areaTetraedro(double lado){
+
+    public double getArea(double lado) {
+        return areaTetraedro(lado);
+    }
+
+    public double getVolumen(double lado) {
+        return volumenTetraedro(lado);
+    }
+
+    public double getAltura(double lado) {
+        return alturaTetraedro(lado);
+    }
+
+
+
+    private double areaTetraedro(double lado){
         area = lado * lado * Math.sqrt(3.0);
         return area;
     }
 
 
-    public double alturaTetraedro(double lado){
+    private double alturaTetraedro(double lado){
         altura = lado * Math.sqrt(6.0) / 3.0;
         return altura;
     }
 
-    public double volumenTetraedro(double lado){
+    private double volumenTetraedro(double lado){
         volumen = Math.pow(lado, 3.0) * Math.sqrt(2.0) / 12.0;
         return volumen;
     }

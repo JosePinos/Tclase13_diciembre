@@ -13,17 +13,29 @@ public class Prisma {
     }
 
 
-    public double areaPrismaRect(double largo, double alto, double ancho){
+    public double getArea(double largo, double alto, double ancho) {
+        return areaPrismaRect(largo, alto, ancho);
+    }
+
+    public double getVolumen(double largo, double alto, double ancho) {
+        return volumenPrismaRect(largo, alto, ancho);
+    }
+
+    public double getDiagonal(double largo, double alto, double ancho) {
+        return diagonalPrismaRect(largo, alto, ancho);
+    }
+
+    private double areaPrismaRect(double largo, double alto, double ancho){
         area = 2.0 * alto * (largo+ancho) +  (2.0 * largo * ancho);
         return  area;
     }
 
-    public double volumenPrismaRect(double largo, double alto, double ancho){
+    private double volumenPrismaRect(double largo, double alto, double ancho){
         volumen = largo * alto * ancho;
         return volumen;
     }
 
-    public double diagonalPrismaRect(double largo, double alto, double ancho){
+    private double diagonalPrismaRect(double largo, double alto, double ancho){
         diagonal = Math.sqrt( Math.pow(largo,2.0) + Math.pow(alto,2.0) + Math.pow(ancho,2.0) );
         return diagonal;
     }

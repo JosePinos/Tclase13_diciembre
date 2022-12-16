@@ -10,13 +10,21 @@ public class Esfera {
     }
 
 
-    public double areaEsfera(double radio){
+    public double getArea(double radio) {
+        return areaEsfera(radio);
+    }
+
+    public double getVolumen(double radio) {
+        return volumenEsfera(radio);
+    }
+
+    private double areaEsfera(double radio){
 
         area = 4.0 * Math.PI * radio * radio;
         return area;
     }
 
-    public double volumenEsfera(double radio){
+    private double volumenEsfera(double radio){
 
         volumen = 4.0 * Math.PI * radio * radio * radio / 3.0;
         return volumen;

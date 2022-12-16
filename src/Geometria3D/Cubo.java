@@ -10,21 +10,31 @@ public class Cubo {
     }
 
 
-    public double areaCubo(double lado){
+    public double getArea(double lado) {
+        return areaCubo(lado);
+    }
 
+    public double getVolumen(double lado) {
+        return volumenCubo(lado);
+    }
+
+    public double dameDiagonal(double lado){
+        return diagonalCubo(lado);
+    }
+
+    private double areaCubo(double lado){
         area = 6.0 * lado * lado;
         return area;
-
     }
 
-    public double volumenCubo(double lado){
-
+    private double volumenCubo(double lado){
         volumen = Math.pow(lado, 3.0);
         return volumen;
-
     }
 
-
+    private double diagonalCubo(double lado){
+        return Math.cbrt(3) * lado;
+    }
 
 
 

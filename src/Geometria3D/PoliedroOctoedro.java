@@ -10,6 +10,18 @@ public class PoliedroOctoedro {
     }
 
 
+    public double getArea(double lado) {
+        return areaOctoedro(lado);
+    }
+
+    public double getVolumen(double lado) {
+        return volumenOctoedro(lado);
+    }
+
+    public double getDiagonal(double lado) {
+        return diagonalOctoedro(lado);
+    }
+
     public double areaOctoedro(double lado){
 
         area = 2.0 * lado * lado * Math.sqrt(3.0);
