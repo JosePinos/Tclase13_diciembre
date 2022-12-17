@@ -1,7 +1,5 @@
 package Geometria2D;
 public class Pentagono {
-    /*Figura geometrica con 5 lados*/
-
     double apotema, area, perimetro;
     public Pentagono(){
         apotema=0;
