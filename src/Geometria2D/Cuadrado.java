@@ -1,36 +1,31 @@
 package Geometria2D;
-import java.util.Scanner;
 public class Cuadrado {
-    private double area, perimetro, volumen;
-    Scanner leer = new Scanner(System.in);
-    public Cuadrado(double area, double perimetro, double volumen) {
-        this.area = area;
-        this.perimetro = perimetro;
-        this.volumen = volumen;
+    double area, perimetro, diagonal;
+    public Cuadrado(){
+        area=0;
+        perimetro=0;
+        diagonal=0;
     }
-    public void Area_Cuadrado(){
-        System.out.println("Ingrese la base del cuadrado");
-        double base= leer.nextDouble();
-        System.out.println("Ingrese la altura del cuadrado");
-        double altura= leer.nextDouble();
-        if(base!=altura){
-            System.out.println("La base y la altura no coinciden por ende no es un cuadrado");
-        }
-        else{
-            area= altura*base;
-            System.out.println("El Area del Cudrado es:" + area);
-        }
+    private double Area_Cuadrado(double lad){
+        return Math.pow(lad,2);
     }
-    public void Perimetro_Cuadrado(){
-        System.out.println("Ingrese la longitud del primer lado:");
-        double diametro1= leer.nextDouble();
-        System.out.println("Ingrese la longitud del segundo lado:");
-        double diametro2= leer.nextDouble();
-        System.out.println("Ingrese la longitud del tercer lado:");
-        double diametro3= leer.nextDouble();
-        System.out.println("Ingrese la longitud del cuarto lado:");
-        double diametro4= leer.nextDouble();
-        perimetro= diametro1+diametro2+diametro3+diametro4;
-        System.out.println("El Perimetro del Cuadrado es:" + perimetro);
+
+    private double Perimetro_Cuadrado(double lad){
+        return lad+lad+lad+lad;
+    }
+    private double Diagonal_Cuadrado(double lad){
+        return lad*Math.sqrt(2);
+    }
+
+    public double getArea(double lad) {
+        return area=Area_Cuadrado(lad);
+    }
+
+    public double getPerimetro(double lad) {
+        return perimetro=Perimetro_Cuadrado(lad);
+    }
+
+    public double getDiagonal(double lad) {
+        return diagonal=Diagonal_Cuadrado(lad);
     }
 }

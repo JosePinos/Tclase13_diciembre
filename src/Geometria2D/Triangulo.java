@@ -1,36 +1,29 @@
 package Geometria2D;
-import java.util.Scanner;
 public class Triangulo {
-    private double area, perimetro, volumen;
-    Scanner leer = new Scanner(System.in);
-    public Triangulo(double area, double perimetro, double volumen) {
-        this.area = area;
-        this.perimetro = perimetro;
-        this.volumen = volumen;
-    }
-    public void Area_Triangulo(){
-        System.out.println("Ingrese la base del triangulo");
-        double base= leer.nextDouble();
-        System.out.println("Ingrese la altura del triangulo");
-        double altura= leer.nextDouble();
-        area= (base*altura)/2;
-        System.out.println("El Area del triangulo es:" + area);
+    double area, perimetro, hipotenusa;
 
+    public Triangulo(){
+        area=0;
+        perimetro=0;
+        hipotenusa=0;
     }
-    public void Perimetro_Triangulo(){
-        System.out.println("Ingrese el lado del triangulo equilatero:");
-        double lado= leer.nextDouble();
-        perimetro= lado*3;
-        System.out.println("El Perimetro del triangulo equilatero es:" + perimetro);
+    private double Area_Triangulo(double bas, double alt){
+        return (bas*alt)/2;
     }
-    public void Volumen_Triangulo(){
-        System.out.println("Ingrese el area del circulo");
-        double area= leer.nextDouble();
-        System.out.println("Ingrese la altura del triangulo");
-        double altura= leer.nextDouble();
-        System.out.println("Ingrese la largo del triangulo");
-        double largo= leer.nextDouble();
-        volumen=altura*altura*largo;
-        System.out.println("El volumen del triangulo es:" + volumen);
+
+    private double Perimetro_Triangulo(double lad, double lad2, double lad3){
+        return lad+lad2+lad3;
+    }
+    private double Hipotenusa_Triangulo(double cat1, double cat2){
+        return Math.sqrt(Math.pow(cat1,2)+Math.pow(cat2,2));
+    }
+    public double getArea(double bas, double alt) {
+        return area=Area_Triangulo(bas, alt);
+    }
+    public double getPerimetro(double lad1, double lad2, double lad3) {
+        return perimetro=Perimetro_Triangulo(lad1, lad2,lad3);
+    }
+    public double getHipotenusa(double cat1, double cat2) {
+        return hipotenusa=Hipotenusa_Triangulo(cat1, cat2);
     }
 }

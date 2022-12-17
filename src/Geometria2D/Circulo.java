@@ -1,29 +1,29 @@
 package Geometria2D;
-import java.util.Scanner;
 public class Circulo {
-    private double area, perimetro, diametro;
-    Scanner leer = new Scanner(System.in);
-    public Circulo(double area, double perimetro, double volumen) {
-        this.area = area;
-        this.perimetro = perimetro;
-        this.diametro = volumen;
+    double area, perimetro, diametro;
+    public Circulo(){
+        area=0;
+        perimetro=0;
+        diametro=0;
     }
-    public void Area_Circulo(){
-        System.out.println("Ingrese el diametro del circulo");
-        double diametro= leer.nextDouble();
-        area= Math.PI*(Math.pow(diametro,2));
-        System.out.println("El Area del Circulo es:" + area);
+    private double Area_Circulo(double rad){
+        return Math.PI*Math.pow(rad,2);
     }
-    public void Perimetro_Circulo(){
-        System.out.println("Ingrese el diametro del circulo");
-        double diametro= leer.nextDouble();
-        perimetro= Math.PI*diametro;
-        System.out.println("El Perimetro del Circulo es:" + perimetro);
+
+    private double Perimetro_Circulo(double rad){
+        return 2*Math.PI*rad;
     }
-    public void Diametro_Circulo(){
-        System.out.println("Ingrese el area del circulo");
-        double area= leer.nextDouble();
-        diametro=area*2;
-        System.out.println("El Diametro del Circulo es:" + diametro);
+    private double Diametro_Circulo(double rad){
+        return 2*(rad);
+    }
+
+    public double getArea(double rad) {
+        return area=Area_Circulo(rad);
+    }
+    public double getPerimetro(double rad) {
+        return perimetro=Perimetro_Circulo(rad);
+    }
+    public double getDiametro(double rad) {
+        return diametro=Diametro_Circulo(rad);
     }
 }
